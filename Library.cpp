@@ -13,8 +13,6 @@ Library::Library() {}
 
 void Library::addKeywordsForItem(const Item* const item, int nKeywords, ...)
 {
-	// the code in this function demonstrates how to handle a vararg in C++
-
 	va_list		keywords;
 	char		*keyword;
 
@@ -27,67 +25,54 @@ void Library::addKeywordsForItem(const Item* const item, int nKeywords, ...)
 	}
 	va_end(keywords);
 
-	//make a verson of item that we can edit
-
-
-
-	//TRY TO GET RID OF THIS
+	//this isn't ideal but I couldn't think up another way
 	Item* finder = (const_cast<Item*>(item));
 
-
-
+	//if finder is a book
 	ItemSet::iterator it = booksByTitle.find(finder);
 	if (it != booksByTitle.end())
 	{
 		booksByTitle.erase(*it);
 		finder->setKeywords(keywordSet);
-		Item *book = new Book(finder);
-		booksByTitle.insert(book);
-//		delete book;
+		booksByTitle.insert(finder);
 	}
-
+	//if finder is an album
 	it = albumsByTitle.find(finder);
 	if (it != albumsByTitle.end())
 	{
 		albumsByTitle.erase(*it);
 		finder->setKeywords(keywordSet);
-		Item *album = new MusicAlbum(finder);
-		albumsByTitle.insert(album);
-//		delete album;
+		albumsByTitle.insert(finder);
 	}
-
+	//if finder is a movie
 	it = moviesByTitle.find(finder);
 	if (it != moviesByTitle.end())
 	{
 		moviesByTitle.erase(*it);
 		finder->setKeywords(keywordSet);
-		Item *movie = new Movie(finder);
-		moviesByTitle.insert(movie);
-//		delete movie;
+		moviesByTitle.insert(finder);
 	}
-
-
 
 	//start at the first keyword in list
 	StringSet::iterator it2 = keywordSet.begin();
 	while (it2 != keywordSet.end())
 	{
-		//make a new ItemSet
 		ItemSet* iSet;
 		//iset is now the list at iterator's keyword
 		if (keywordMap.find(*it2) != keywordMap.end())
 		{
 			iSet = keywordMap.at(*it2);
 		}
+		//or, if there was no list at that keyword, we create one.
 		else
 		{
 			iSet = new ItemSet;
 		}
 		//add copy to itemset
 		iSet->insert(finder);
-		//overwrite 
+		//overwrite, note this works even when our if statement failed, 
+		//since the [] operator creates a place in our map if its argument isn't found
 		keywordMap[*it2] = iSet;
-//		delete iSet;
 		it2++;
 	}
 }
@@ -98,6 +83,7 @@ const ItemSet* Library::itemsForKeyword(const string& keyword) const
 	{
 		return NULL;
 	}
+	//returns the set of items labelled with this keyword
 	ItemSet* iSet = keywordMap.at(keyword);
 	return iSet;
 }
@@ -108,24 +94,28 @@ const ItemSet* Library::itemsForKeyword(const string& keyword) const
 
 const Item* Library::addBook(const string& title, const string& author, const int nPages)
 {
+	//create a new book object and insert it to our itemSet
 	Item *book = new Book(title, author, nPages);
-
 	booksByTitle.insert(book);
 
+	//a pointer to a set of books written by this specific author
 	ItemSet * authorSet;
 
-	//if there are any books by this author
+	//if there are any books by this author, grab the set of them
 	if (booksByCreator.find(author) != booksByCreator.end())
 	{
 		authorSet = booksByCreator.at(author);
 	}
 	else
+	//if not, create a new set
 	{
 		authorSet = new ItemSet;
 	}
 
+	//add this specific book to the set of books by this author
 	authorSet->insert(book);
 
+	//add (or overwrite) the set of books to the map, with the key being the author's name.
 	booksByCreator[author] = authorSet;
 
 	return book;
@@ -148,17 +138,17 @@ const ItemSet* Library::books() const
 }
 
 
+
 //ALBUMS
 
 const Item* Library::addMusicAlbum(const string& title, const string& band, const int nSongs)
 {
 	Item *album = new MusicAlbum(title, band, nSongs);
-
+	
 	albumsByTitle.insert(album);
 
 	ItemSet * bandSet;
 
-	//if there are any albums by this artist
 	if (albumsByCreator.find(band) != albumsByCreator.end())
 	{
 		bandSet = albumsByCreator.at(band);
@@ -180,8 +170,8 @@ void Library::addBandMembers(const Item* const musicAlbum, const int nBandMember
 	va_list members;
 	char *member;
 
-	StringSet memberSet;
 
+	StringSet memberSet;
 	va_start(members, nBandMembers);
 	for (int i = 0; i < nBandMembers; i++) {
 		member = va_arg(members, char*);
@@ -189,35 +179,40 @@ void Library::addBandMembers(const Item* const musicAlbum, const int nBandMember
 	}
 	va_end(members);
 
-	Item* finder = (const_cast<Item*>(musicAlbum));
-	albumsByTitle.erase(finder);
-	(static_cast<MusicAlbum*>(finder))->setMembers(memberSet);
-	albumsByTitle.insert(finder);
 
+	//again, i dont think const casting is ideal. 
+
+	Item* finder = (const_cast<Item*>(musicAlbum));
+	//we erase the old entry of this album (the one containing no data on band members)
+	albumsByTitle.erase(finder);
+	//cast finder into an album, so we can invoke setMembers function
+	(static_cast<MusicAlbum*>(finder))->setMembers(memberSet);
+	//add the modified album back to the set
+	albumsByTitle.insert(finder);
 
 	StringSet::iterator it = memberSet.begin();
 	while (it != memberSet.end())
 	{
 		ItemSet* iSet;
+		//grab the set of albums by this musician
 		if (albumsByMember.find(*it) != albumsByMember.end())
 		{
 			iSet = albumsByMember.at(*it);
 
 		}
+		//....or create it if it doesn't already exist
 		else
 		{
 			iSet = new ItemSet;
 		}
-
+		//add this album to the set
 		iSet->insert(finder);
+		//overwrite the previous version of the set (or create a new entry in the map)
 		albumsByMember[*it] = iSet;
-//		delete iSet;
 		it++;
 	}
 
 }
-
-
 
 const ItemSet* Library::musicByBand(const string& band) const
 {
@@ -248,8 +243,6 @@ const ItemSet* Library::musicAlbums() const
 
 
 
-
-
 //MOVIES
 
 const Item* Library::addMovie(const string& title, const string& director, const int nScenes)
@@ -260,7 +253,6 @@ const Item* Library::addMovie(const string& title, const string& director, const
 
 	ItemSet * directorSet;
 
-	//if there are any movies by this director
 	if (moviesByCreator.find(director) != moviesByCreator.end())
 	{
 		directorSet = moviesByCreator.at(director);
@@ -276,8 +268,6 @@ const Item* Library::addMovie(const string& title, const string& director, const
 
 	return movie;
 }
-
-
 
 void Library::addCastMembers(const Item* const movie, const int nCastMembers, ...)
 {
@@ -313,11 +303,9 @@ void Library::addCastMembers(const Item* const movie, const int nCastMembers, ..
 
 		iSet->insert(finder);
 		moviesByMember[*it] = iSet;
-//		delete iSet;
 		it++;
 	}
 }
-
 
 const ItemSet* Library::moviesByDirector(const string& director) const
 {
@@ -346,7 +334,8 @@ const ItemSet* Library::movies() const
 }
 
 
-//DESTRUCTOR
+
+//DESTRUCTOR FUNCS
 
 void Library::deleteItemSetContents(ItemSet& itemSet)
 {
@@ -357,6 +346,7 @@ void Library::deleteItemSetContents(ItemSet& itemSet)
 	while(it != itemSet.end())
 	{
 		ptr = it->getPtr();
+		delete ptr;
 		it++;
 	}
 
@@ -375,60 +365,18 @@ void Library::deleteMapContents(StringToItemSetMap& s2ism)
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-void Library::deleteItemSetContents(ItemSet& itemSet)
-{
-	ItemSet::iterator it = itemSet.begin();
-
-	while(it != itemSet.end())
-	{
-		delete[] &it;
-		it++;
-	}
-
-	itemSet.clear();
-}
-
-void Library::deleteMapContents(StringToItemSetMap& s2ism)
-{
-	StringToItemSetMap::iterator it = s2ism.begin();
-	while (it != s2ism.end())
-	{
-		deleteItemSetContents(*it->second);
-		delete[] &it->second;
-		it++;
-	}
-
-}
-
-*/
 Library::~Library()
 {
+	deleteItemSetContents(booksByTitle);
+	deleteItemSetContents(albumsByTitle);
+	deleteItemSetContents(moviesByTitle);
+
 	deleteMapContents(keywordMap);
 	deleteMapContents(booksByCreator);
 	deleteMapContents(albumsByCreator);
 	deleteMapContents(albumsByMember);
 	deleteMapContents(moviesByCreator);
 	deleteMapContents(moviesByMember);
-
-	deleteItemSetContents(booksByTitle);
-	deleteItemSetContents(albumsByTitle);
-	deleteItemSetContents(moviesByTitle);
 }
 
 

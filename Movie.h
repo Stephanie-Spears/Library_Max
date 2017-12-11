@@ -13,13 +13,9 @@ public:
 
 	void setCast(const set<string> castSet);
 
-	//friend ostream& operator<<(ostream& out, const Movie* const movie);
-
 private:
 	set<string> cast;
 	void printCast(ostream& out) const;
 protected:
 	virtual ostream& stream_write(ostream&) const;
 };
-
-//ostream& operator<<(ostream& out, const Movie* const movie);

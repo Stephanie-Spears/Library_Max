@@ -10,7 +10,6 @@ public:
 	Book(const string& title, const string& creator, const int size);
 	Book(const Item* in);
 	~Book(void);
-//	friend		ostream& operator<<(ostream& out, const Book* const book);
 
 protected:
 	virtual ostream& stream_write(ostream&) const;

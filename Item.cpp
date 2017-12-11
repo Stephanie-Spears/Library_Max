@@ -22,18 +22,9 @@ Item::Item(const Item* in)
 	this->keywords = in->getKeywords();
 }
 
-void Item::operator = (const Item &i)
-{
-	title = i.title;
-	creator = i.creator;
-	size = i.size;
-	keywords = i.keywords;
-}
-
 
 Item::~Item()
 {
-
 }
 
 //SETTERS
@@ -79,17 +70,34 @@ set<string> Item::getKeywords() const
 	return this->keywords;
 }
 
+
+
 const void Item::printKeywords(ostream& out) const
 {
 	set<string>::iterator it = this->keywords.begin();
 	while (it != this->keywords.end())
 	{
-		out << *it << ", ";
+		out << *it;
 		it++;
+		if(it != this->keywords.end())
+		{
+			out << ", ";
+		}
 	}
 }
 
+
+
 //OVERLOADS
+
+void Item::operator = (const Item &i)
+{
+	title = i.title;
+	creator = i.creator;
+	size = i.size;
+	keywords = i.keywords;
+}
+
 bool operator<(const Item& i1, const Item& i2)
 {
 	const string n1 = i1.getTitle();
@@ -121,19 +129,3 @@ ostream& operator<<(ostream& out, const Item* const item)
 {
 	return item->stream_write(out);
 }
-
-/*
-ostream& operator<<(ostream& out, const Item* const item)
-{
-	const string title = item->getTitle();
-	const string creator = item->getCreator();
-	const int size = item->getSize();
-
-
-	out << title << endl;
-	out << creator << endl;
-	out << size << endl;
-
-	return out;
-}
-*/

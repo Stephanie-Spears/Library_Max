@@ -3,15 +3,15 @@
 MusicAlbum::MusicAlbum(void)
 {
 }
+
 MusicAlbum::MusicAlbum(const string& title, const string& creator, const int size) : Item(title, creator, size)
 {
-
 }
-
 
 MusicAlbum::MusicAlbum(const Item* in) : Item(in)
 {
 }
+
 MusicAlbum::~MusicAlbum(void)
 {
 }
@@ -26,33 +26,14 @@ void MusicAlbum::printMembers(ostream& out) const
 	set<string>::iterator it = this->members.begin();
 	while (it != this->members.end())
 	{
-		string pw = *it;
-		out << pw << ", ";
+		out << *it;
 		it++;
-	}
-
-}
-
-/*const void Item::printKeywords(ostream& out)
-{
-	set<string>::iterator it = this->keywords.begin();
-	while (it != this->keywords.end())
-	{
-		out << *it << ", ";
-		it++;
+		if(it != this->members.end())
+		{
+			out << ", ";
+		}
 	}
 }
-
-ostream& operator<<(ostream& out, const MusicAlbum* const album)
-{
-	out << static_cast<const Item*>(album);
-	album->printMembers(out);
-	out << endl;
-	album->printKeywords(out);
-	out << endl << endl;
-	return out;
-}
-*/
 
 ostream& MusicAlbum::stream_write(ostream& out) const
 {

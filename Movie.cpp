@@ -6,12 +6,10 @@ Movie::Movie(void)
 
 Movie::Movie(const string& title, const string& creator, const int size) : Item(title, creator, size)
 {
-
 }
 
 Movie::Movie(const Item* in) : Item(in)
 {
-
 }
 
 Movie::~Movie(void)
@@ -28,22 +26,15 @@ void Movie::printCast(ostream& out) const
 	set<string>::iterator it = this->cast.begin();
 	while (it != this->cast.end())
 	{
-		out << *it << ", ";
+		out << *it;
 		it++;
+		if(it != this->cast.end())
+		{
+			out << ", ";
+		}
 	}
+}
 
-}
-/*
-ostream& operator<<(ostream& out, const Movie* const movie)
-{
-	out << static_cast<const Item*>(movie);
-	movie->printCast(out);
-	out << endl;
-	movie->printKeywords(out);
-	out << endl << endl;
-	return out;
-}
-*/
 ostream& Movie::stream_write(ostream& out) const
 {
 	string title = this->getTitle();

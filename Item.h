@@ -9,14 +9,10 @@ using namespace std;
 class Item
 {
 public:
-
 	Item(const string& title, const string& creator, const int size);
 	Item();
 	Item(const Item* in);
 	virtual ~Item();
-
-	void operator = (const Item &i);
-
 
 	//SETTERS
 	void setCreator(const string& creator);
@@ -31,10 +27,9 @@ public:
 	set<string> getKeywords() const;
 
 	friend ostream& operator<<(ostream& out, const Item* const item);
-
+	void operator = (const Item &i);
 
 private:
-
 	string title;
 	string creator;
 	int size;
@@ -79,6 +74,3 @@ bool operator<(const Item& i1, const Item& i2);
 
 // compare two instances of ItemPtr
 bool operator<(const ItemPtr& ip1, const ItemPtr& ip2);
-
-//ostream& operator<<(ostream& out, const Item* const item);
-
