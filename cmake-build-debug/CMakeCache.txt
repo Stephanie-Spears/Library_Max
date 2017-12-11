@@ -135,7 +135,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 CMAKE_OSX_SYSROOT:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=mylibrary_v2_2
+CMAKE_PROJECT_NAME:STATIC=Library_Max
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -186,14 +186,14 @@ CMAKE_STRIP:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/Xcode
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Value Computed by CMake
+Library_Max_BINARY_DIR:STATIC=/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug
+
+//Value Computed by CMake
+Library_Max_SOURCE_DIR:STATIC=/Users/wolfmac/CLionProjects/Library_Max
+
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
-
-//Value Computed by CMake
-mylibrary_v2_2_BINARY_DIR:STATIC=/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug
-
-//Value Computed by CMake
-mylibrary_v2_2_SOURCE_DIR:STATIC=/Users/wolfmac/CLionProjects/Library_Max
 
 
 ########################

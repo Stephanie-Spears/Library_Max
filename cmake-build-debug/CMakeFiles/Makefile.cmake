@@ -121,5 +121,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/mylibrary_v2_2.dir/DependInfo.cmake"
+  "CMakeFiles/Library_Max.dir/DependInfo.cmake"
   )

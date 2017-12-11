@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="mylibrary_v2_2"/>
+		<Option title="Library_Max"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
@@ -37,8 +37,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="mylibrary_v2_2">
-				<Option output="/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/mylibrary_v2_2" prefix_auto="0" extension_auto="0"/>
+			<Target title="Library_Max">
+				<Option output="/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Library_Max" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -52,14 +52,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 mylibrary_v2_2"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 Library_Max"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="mylibrary_v2_2/fast">
-				<Option output="/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/mylibrary_v2_2" prefix_auto="0" extension_auto="0"/>
+			<Target title="Library_Max/fast">
+				<Option output="/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Library_Max" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -73,7 +73,7 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 mylibrary_v2_2/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 Library_Max/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -81,37 +81,37 @@
 			</Target>
 		</Build>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/Book.cpp">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/Book.h">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/Item.cpp">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/Item.h">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/Library.cpp">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/Library.h">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/Movie.cpp">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/Movie.h">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/MusicAlbum.cpp">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/MusicAlbum.h">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/mycpplibrary.cpp">
-			<Option target="mylibrary_v2_2"/>
+			<Option target="Library_Max"/>
 		</Unit>
 		<Unit filename="/Users/wolfmac/CLionProjects/Library_Max/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

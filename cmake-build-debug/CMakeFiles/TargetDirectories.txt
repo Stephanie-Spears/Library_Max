@@ -1,3 +1,3 @@
 /Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/CMakeFiles/mylibrary_v2_2.dir
+/Users/wolfmac/CLionProjects/Library_Max/cmake-build-debug/CMakeFiles/Library_Max.dir

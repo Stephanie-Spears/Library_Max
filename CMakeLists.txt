@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.9)
-project(mylibrary_v2_2)
+project(Library_Max)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(mylibrary_v2_2
+add_executable(Library_Max
         Book.cpp
         Book.h
         Item.cpp

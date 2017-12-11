@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mylibrary_v2_2
+# Target rules for targets named Library_Max
 
 # Build rule for target.
-mylibrary_v2_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mylibrary_v2_2
-.PHONY : mylibrary_v2_2
+Library_Max: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Library_Max
+.PHONY : Library_Max
 
 # fast build rule for target.
-mylibrary_v2_2/fast:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/build
-.PHONY : mylibrary_v2_2/fast
+Library_Max/fast:
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/build
+.PHONY : Library_Max/fast
 
 Book.o: Book.cpp.o
 
@@ -129,7 +129,7 @@ Book.o: Book.cpp.o
 
 # target to build an object file
 Book.cpp.o:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Book.cpp.o
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Book.cpp.o
 .PHONY : Book.cpp.o
 
 Book.i: Book.cpp.i
@@ -138,7 +138,7 @@ Book.i: Book.cpp.i
 
 # target to preprocess a source file
 Book.cpp.i:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Book.cpp.i
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Book.cpp.i
 .PHONY : Book.cpp.i
 
 Book.s: Book.cpp.s
@@ -147,7 +147,7 @@ Book.s: Book.cpp.s
 
 # target to generate assembly for a file
 Book.cpp.s:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Book.cpp.s
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Book.cpp.s
 .PHONY : Book.cpp.s
 
 Item.o: Item.cpp.o
@@ -156,7 +156,7 @@ Item.o: Item.cpp.o
 
 # target to build an object file
 Item.cpp.o:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Item.cpp.o
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Item.cpp.o
 .PHONY : Item.cpp.o
 
 Item.i: Item.cpp.i
@@ -165,7 +165,7 @@ Item.i: Item.cpp.i
 
 # target to preprocess a source file
 Item.cpp.i:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Item.cpp.i
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Item.cpp.i
 .PHONY : Item.cpp.i
 
 Item.s: Item.cpp.s
@@ -174,7 +174,7 @@ Item.s: Item.cpp.s
 
 # target to generate assembly for a file
 Item.cpp.s:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Item.cpp.s
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Item.cpp.s
 .PHONY : Item.cpp.s
 
 Library.o: Library.cpp.o
@@ -183,7 +183,7 @@ Library.o: Library.cpp.o
 
 # target to build an object file
 Library.cpp.o:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Library.cpp.o
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Library.cpp.o
 .PHONY : Library.cpp.o
 
 Library.i: Library.cpp.i
@@ -192,7 +192,7 @@ Library.i: Library.cpp.i
 
 # target to preprocess a source file
 Library.cpp.i:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Library.cpp.i
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Library.cpp.i
 .PHONY : Library.cpp.i
 
 Library.s: Library.cpp.s
@@ -201,7 +201,7 @@ Library.s: Library.cpp.s
 
 # target to generate assembly for a file
 Library.cpp.s:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Library.cpp.s
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Library.cpp.s
 .PHONY : Library.cpp.s
 
 Movie.o: Movie.cpp.o
@@ -210,7 +210,7 @@ Movie.o: Movie.cpp.o
 
 # target to build an object file
 Movie.cpp.o:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Movie.cpp.o
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Movie.cpp.o
 .PHONY : Movie.cpp.o
 
 Movie.i: Movie.cpp.i
@@ -219,7 +219,7 @@ Movie.i: Movie.cpp.i
 
 # target to preprocess a source file
 Movie.cpp.i:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Movie.cpp.i
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Movie.cpp.i
 .PHONY : Movie.cpp.i
 
 Movie.s: Movie.cpp.s
@@ -228,7 +228,7 @@ Movie.s: Movie.cpp.s
 
 # target to generate assembly for a file
 Movie.cpp.s:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/Movie.cpp.s
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/Movie.cpp.s
 .PHONY : Movie.cpp.s
 
 MusicAlbum.o: MusicAlbum.cpp.o
@@ -237,7 +237,7 @@ MusicAlbum.o: MusicAlbum.cpp.o
 
 # target to build an object file
 MusicAlbum.cpp.o:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/MusicAlbum.cpp.o
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/MusicAlbum.cpp.o
 .PHONY : MusicAlbum.cpp.o
 
 MusicAlbum.i: MusicAlbum.cpp.i
@@ -246,7 +246,7 @@ MusicAlbum.i: MusicAlbum.cpp.i
 
 # target to preprocess a source file
 MusicAlbum.cpp.i:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/MusicAlbum.cpp.i
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/MusicAlbum.cpp.i
 .PHONY : MusicAlbum.cpp.i
 
 MusicAlbum.s: MusicAlbum.cpp.s
@@ -255,7 +255,7 @@ MusicAlbum.s: MusicAlbum.cpp.s
 
 # target to generate assembly for a file
 MusicAlbum.cpp.s:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/MusicAlbum.cpp.s
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/MusicAlbum.cpp.s
 .PHONY : MusicAlbum.cpp.s
 
 mycpplibrary.o: mycpplibrary.cpp.o
@@ -264,7 +264,7 @@ mycpplibrary.o: mycpplibrary.cpp.o
 
 # target to build an object file
 mycpplibrary.cpp.o:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/mycpplibrary.cpp.o
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/mycpplibrary.cpp.o
 .PHONY : mycpplibrary.cpp.o
 
 mycpplibrary.i: mycpplibrary.cpp.i
@@ -273,7 +273,7 @@ mycpplibrary.i: mycpplibrary.cpp.i
 
 # target to preprocess a source file
 mycpplibrary.cpp.i:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/mycpplibrary.cpp.i
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/mycpplibrary.cpp.i
 .PHONY : mycpplibrary.cpp.i
 
 mycpplibrary.s: mycpplibrary.cpp.s
@@ -282,7 +282,7 @@ mycpplibrary.s: mycpplibrary.cpp.s
 
 # target to generate assembly for a file
 mycpplibrary.cpp.s:
-	$(MAKE) -f CMakeFiles/mylibrary_v2_2.dir/build.make CMakeFiles/mylibrary_v2_2.dir/mycpplibrary.cpp.s
+	$(MAKE) -f CMakeFiles/Library_Max.dir/build.make CMakeFiles/Library_Max.dir/mycpplibrary.cpp.s
 .PHONY : mycpplibrary.cpp.s
 
 # Help Target
@@ -293,7 +293,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... mylibrary_v2_2"
+	@echo "... Library_Max"
 	@echo "... Book.o"
 	@echo "... Book.i"
 	@echo "... Book.s"
